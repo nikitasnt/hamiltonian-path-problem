@@ -6,7 +6,7 @@ public partial class UndirectedGraph
     {
         public uint Number { get; }
 
-        private static uint _numberCounter;
+        private static uint _numberCounter = 1;
 
         private readonly List<Edge> _edges;
 
