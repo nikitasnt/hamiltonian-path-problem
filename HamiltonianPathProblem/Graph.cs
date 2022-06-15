@@ -1,10 +1,10 @@
 ﻿namespace HamiltonianPathProblem;
 
-public partial class UndirectedGraph
+public partial class Graph
 {
     private List<Vertex> _vertices;
 
-    public UndirectedGraph(uint[][] adjacencyList)
+    public Graph(uint[][] adjacencyList)
     {
         if (!IsAdjacencyListCorrect(adjacencyList))
         {

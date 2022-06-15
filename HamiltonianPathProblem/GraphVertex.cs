@@ -1,6 +1,6 @@
 ﻿namespace HamiltonianPathProblem;
 
-public partial class UndirectedGraph
+public partial class Graph
 {
     private class Vertex
     {
@@ -8,23 +8,23 @@ public partial class UndirectedGraph
 
         private static uint _numberCounter = 1;
 
-        private readonly List<Edge> _edges;
+        private readonly List<Vertex> _vertices;
 
         public Vertex()
         {
             Number = _numberCounter++;
-            _edges = new List<Edge>();
+            _vertices = new List<Vertex>();
         }
         
-        public Vertex(List<Edge> edges)
+        public Vertex(List<Vertex> vertices)
         {
             Number = _numberCounter++;
-            _edges = edges;
+            _vertices = vertices;
         }
 
-        public void AddEdge(Edge edge)
+        public void AddVertex(Vertex vertex)
         {
-            _edges.Add(edge);
+            _vertices.Add(vertex);
         }
     }
 }

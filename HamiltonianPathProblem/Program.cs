@@ -11,4 +11,4 @@ uint[][] adjacencyList =
     new uint[] { 1, 2, 6 }      // 7
 };
 
-var graph = new UndirectedGraph(adjacencyList);
+var graph = new Graph(adjacencyList);
