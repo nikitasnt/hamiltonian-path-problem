@@ -2,9 +2,9 @@
 
 public partial class Graph
 {
-    private List<Vertex> _vertices;
+    private readonly List<Vertex> _vertices;
 
-    public Graph(uint[][] adjacencyList)
+    public Graph(List<List<uint>> adjacencyList)
     {
         if (!IsAdjacencyListCorrect(adjacencyList))
         {
@@ -16,13 +16,41 @@ public partial class Graph
         BuildGraph(adjacencyList);
     }
 
-    public static bool IsAdjacencyListCorrect(uint[][] adjacencyList)
+    public static bool IsAdjacencyListCorrect(List<List<uint>> adjacencyList)
     {
         return true;    // TODO Realize method
     }
 
-    private void BuildGraph(uint[][] adjacencyList)
+    private void BuildGraph(List<List<uint>> adjacencyList)
     {
+        // Copy to a new list for sorting
+        var adjacencyListCopy = new List<List<uint>>(adjacencyList);
+        adjacencyList = adjacencyListCopy;
+
+        // Sorting numbers of vertices
+        foreach (var list in adjacencyList)
+        {
+            list.Sort();
+        }
+
+        // Creating vertices
+        for (var i = 0; i < adjacencyList.Count; i++)
+        {
+            _vertices.Add(new Vertex());
+        }
         
+        // Bunching vertices
+        for (var i = 0; i < adjacencyList.Count; i++)
+        {
+            for (var j = 0; j < adjacencyList[i].Count; j++)
+            {
+                _vertices[i].AddVertex(GetVertex(adjacencyList[i][j]));
+            }
+        }
+    }
+
+    private Vertex GetVertex(uint number)
+    {
+        return _vertices.FirstOrDefault(vertex => vertex.Number == number)!;
     }
 }
