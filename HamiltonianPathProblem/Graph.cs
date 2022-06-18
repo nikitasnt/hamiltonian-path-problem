@@ -72,12 +72,7 @@ public partial class Graph
         var pathWasFound = false;
         HamiltonianPathRecursive(VertexWithMaxDegree(), traversedVertices, ref pathWasFound);
 
-        if (!pathWasFound)
-        {
-            return new List<uint>();
-        }
-
-        return traversedVertices.Select(vertex => vertex.Number).ToList();
+        return !pathWasFound ? new List<uint>() : traversedVertices.Select(vertex => vertex.Number).ToList();
     }
 
     private void HamiltonianPathRecursive(Vertex vertex, List<Vertex> traversedVertices, ref bool pathWasFound)
@@ -104,11 +99,13 @@ public partial class Graph
             }
         }
 
-        if (traversedVertices.Count == _vertices.Count && vertex == VertexWithMaxDegree())
+        if (traversedVertices.Count != _vertices.Count || vertex != VertexWithMaxDegree())
         {
-            traversedVertices.Add(vertex);
-            pathWasFound = true;
+            return;
         }
+        
+        traversedVertices.Add(vertex);
+        pathWasFound = true;
     }
 
     private Vertex VertexWithMaxDegree()

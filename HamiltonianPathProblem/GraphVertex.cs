@@ -15,12 +15,6 @@ public partial class Graph
             Number = number;
             Vertices = new List<Vertex>();
         }
-        
-        public Vertex(uint number, List<Vertex> vertices)
-        {
-            Number = number;
-            Vertices = vertices;
-        }
 
         public void AddVertex(Vertex vertex)
         {
