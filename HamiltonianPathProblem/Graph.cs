@@ -36,7 +36,7 @@ public partial class Graph
         // Creating vertices
         for (var i = 0; i < adjacencyList.Count; i++)
         {
-            _vertices.Add(new Vertex());
+            _vertices.Add(new Vertex((uint)i + 1));
         }
         
         // Bunching vertices
@@ -52,5 +52,75 @@ public partial class Graph
     private Vertex GetVertex(uint number)
     {
         return _vertices.FirstOrDefault(vertex => vertex.Number == number)!;
+    }
+
+    public bool IsHamiltonian()
+    {
+        return HamiltonianPath().Count != 0;
+    }
+
+    public List<uint> HamiltonianPath()
+    {
+        // If graph is empty
+        if (_vertices.Count == 0)
+        {
+            return new List<uint>();
+        }
+        
+        // Start from the vertex with max degree
+        var traversedVertices = new List<Vertex>();
+        var pathWasFound = false;
+        HamiltonianPathRecursive(VertexWithMaxDegree(), traversedVertices, ref pathWasFound);
+
+        if (!pathWasFound)
+        {
+            return new List<uint>();
+        }
+
+        return traversedVertices.Select(vertex => vertex.Number).ToList();
+    }
+
+    private void HamiltonianPathRecursive(Vertex vertex, List<Vertex> traversedVertices, ref bool pathWasFound)
+    {
+        if (pathWasFound)
+        {
+            return;
+        }
+        
+        if (!traversedVertices.Contains(vertex))
+        {
+            // Add current vertex
+            traversedVertices.Add(vertex);
+            
+            foreach (var nextVertex in vertex.Vertices)
+            {
+                HamiltonianPathRecursive(nextVertex, traversedVertices, ref pathWasFound);
+            }
+            
+            // Remove current vertex from back
+            if (!pathWasFound)
+            {
+                traversedVertices.RemoveAt(traversedVertices.Count - 1);
+            }
+        }
+
+        if (traversedVertices.Count == _vertices.Count && vertex == VertexWithMaxDegree())
+        {
+            traversedVertices.Add(vertex);
+            pathWasFound = true;
+        }
+    }
+
+    private Vertex VertexWithMaxDegree()
+    {
+        var vertexWithMaxDegree = _vertices.First();
+        
+        // Search max degree
+        foreach (var vertex in _vertices.Where(vertex => vertex.Degree > vertexWithMaxDegree.Degree))
+        {
+            vertexWithMaxDegree = vertex;
+        }
+
+        return vertexWithMaxDegree;
     }
 }

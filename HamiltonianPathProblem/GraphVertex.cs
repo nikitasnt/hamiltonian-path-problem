@@ -6,25 +6,25 @@ public partial class Graph
     {
         public uint Number { get; }
 
-        private static uint _numberCounter = 1;
+        public List<Vertex> Vertices { get; }
+        
+        public uint Degree => (uint)Vertices.Count;
 
-        private readonly List<Vertex> _vertices;
-
-        public Vertex()
+        public Vertex(uint number)
         {
-            Number = _numberCounter++;
-            _vertices = new List<Vertex>();
+            Number = number;
+            Vertices = new List<Vertex>();
         }
         
-        public Vertex(List<Vertex> vertices)
+        public Vertex(uint number, List<Vertex> vertices)
         {
-            Number = _numberCounter++;
-            _vertices = vertices;
+            Number = number;
+            Vertices = vertices;
         }
 
         public void AddVertex(Vertex vertex)
         {
-            _vertices.Add(vertex);
+            Vertices.Add(vertex);
         }
     }
 }
