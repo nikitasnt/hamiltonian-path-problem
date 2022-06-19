@@ -60,3 +60,26 @@ foreach (var i in graph2.HamiltonianPath())
     Console.Write($"{i} ");
 }
 Console.WriteLine();
+
+var adjacencyList3 = new List<List<uint>>
+{
+    new() { 2 },    // 1 vertex
+    new() { 1 }     // 2
+};
+var graph3 = new Graph(adjacencyList3);
+foreach (var i in graph3.HamiltonianPath())
+{
+    Console.Write($"{i} ");
+}
+Console.WriteLine();
+
+var adjacencyList4 = new List<List<uint>>
+{
+    new()   // 1 vertex
+};
+var graph4 = new Graph(adjacencyList4);
+foreach (var i in graph4.HamiltonianPath())
+{
+    Console.Write($"{i} ");
+}
+Console.WriteLine();

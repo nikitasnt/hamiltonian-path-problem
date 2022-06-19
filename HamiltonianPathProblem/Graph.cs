@@ -61,12 +61,16 @@ public partial class Graph
 
     public List<uint> HamiltonianPath()
     {
-        // If graph is empty
-        if (_vertices.Count == 0)
+        switch (_vertices.Count)
         {
-            return new List<uint>();
+            // If graph is empty
+            case 0:
+                return new List<uint>();
+            // If graph has one vertex
+            case 1:
+                return new List<uint> { _vertices.First().Number };
         }
-        
+
         // Start from the vertex with max degree
         var traversedVertices = new List<Vertex>();
         var pathWasFound = false;
