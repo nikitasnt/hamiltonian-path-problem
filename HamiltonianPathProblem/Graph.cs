@@ -72,14 +72,22 @@ public partial class Graph
         }
 
         // Start from the vertex with max degree
-        var traversedVertices = new List<Vertex>();
+        var startingVertex = VertexWithMaxDegree();
+        var traversedVertices = new List<Vertex> { startingVertex };
         var pathWasFound = false;
-        HamiltonianPathRecursive(VertexWithMaxDegree(), traversedVertices, ref pathWasFound);
 
-        return !pathWasFound ? new List<uint>() : traversedVertices.Select(vertex => vertex.Number).ToList();
+        Parallel.ForEach(startingVertex.Vertices, currentVertex =>
+        {
+            var copyOfTraversed = traversedVertices.ToList();
+            
+            HamiltonianPathRecursive(currentVertex, copyOfTraversed, ref pathWasFound, ref traversedVertices);
+        });
+
+        return pathWasFound ? traversedVertices.Select(vertex => vertex.Number).ToList() : new List<uint>();
     }
 
-    private void HamiltonianPathRecursive(Vertex vertex, List<Vertex> traversedVertices, ref bool pathWasFound)
+    private void HamiltonianPathRecursive(Vertex vertex, List<Vertex> traversedVertices,
+        ref bool pathWasFound, ref List<Vertex> resultPath)
     {
         if (pathWasFound)
         {
@@ -93,7 +101,7 @@ public partial class Graph
             
             foreach (var nextVertex in vertex.Vertices)
             {
-                HamiltonianPathRecursive(nextVertex, traversedVertices, ref pathWasFound);
+                HamiltonianPathRecursive(nextVertex, traversedVertices, ref pathWasFound, ref resultPath);
             }
             
             // Remove current vertex from back
@@ -109,6 +117,7 @@ public partial class Graph
         }
         
         traversedVertices.Add(vertex);
+        resultPath = traversedVertices;
         pathWasFound = true;
     }
 
