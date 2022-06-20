@@ -75,7 +75,7 @@ public partial class Graph
         var startingVertex = VertexWithMaxDegree();
         var traversedVertices = new List<Vertex> { startingVertex };
         var pathWasFound = false;
-
+        
         Parallel.ForEach(startingVertex.Vertices, currentVertex =>
         {
             var copyOfTraversed = traversedVertices.ToList();
@@ -85,7 +85,10 @@ public partial class Graph
 
         return pathWasFound ? traversedVertices.Select(vertex => vertex.Number).ToList() : new List<uint>();
     }
-
+    
+    // A stub object for lock in a HamiltonianPathRecursive method
+    private readonly object _balanceLock = new();
+    
     private void HamiltonianPathRecursive(Vertex vertex, List<Vertex> traversedVertices,
         ref bool pathWasFound, ref List<Vertex> resultPath)
     {
@@ -115,10 +118,14 @@ public partial class Graph
         {
             return;
         }
-        
+
         traversedVertices.Add(vertex);
-        resultPath = traversedVertices;
-        pathWasFound = true;
+
+        lock (_balanceLock)
+        {
+            resultPath = traversedVertices;
+            pathWasFound = true;
+        }
     }
 
     private Vertex VertexWithMaxDegree()
