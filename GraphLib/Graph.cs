@@ -1,4 +1,4 @@
-﻿namespace HamiltonianPathProblem;
+﻿namespace GraphLib;
 
 public partial class Graph
 {

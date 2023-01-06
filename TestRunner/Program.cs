@@ -1,4 +1,4 @@
-﻿using HamiltonianPathProblem;
+﻿using GraphLib;
 
 var adjacencyList0 = new List<List<uint>>
 {
@@ -11,6 +11,7 @@ var adjacencyList0 = new List<List<uint>>
     new() { 1, 2, 6 }      // 7
 };
 var graph0 = new Graph(adjacencyList0);
+Console.WriteLine("Hamiltonian path of graph 0 (graph0.png):");
 foreach (var i in graph0.HamiltonianPath())
 {
     Console.Write($"{i} ");
@@ -25,6 +26,7 @@ var adjacencyList1 = new List<List<uint>>
     new() { 1 }         // 4
 };
 var graph1 = new Graph(adjacencyList1);
+Console.WriteLine("Hamiltonian path of graph 1 (graph1.png):");
 foreach (var i in graph1.HamiltonianPath())
 {
     Console.Write($"{i} ");
@@ -55,6 +57,7 @@ var adjacencyList2 = new List<List<uint>>
     new() { 15, 16, 19 },           // 20
 };
 var graph2 = new Graph(adjacencyList2);
+Console.WriteLine("Hamiltonian path of graph 2 (graph2.png):");
 foreach (var i in graph2.HamiltonianPath())
 {
     Console.Write($"{i} ");
@@ -67,6 +70,7 @@ var adjacencyList3 = new List<List<uint>>
     new() { 1 }     // 2
 };
 var graph3 = new Graph(adjacencyList3);
+Console.WriteLine("Hamiltonian path of graph 3:");
 foreach (var i in graph3.HamiltonianPath())
 {
     Console.Write($"{i} ");
@@ -78,6 +82,7 @@ var adjacencyList4 = new List<List<uint>>
     new()   // 1 vertex
 };
 var graph4 = new Graph(adjacencyList4);
+Console.WriteLine("Hamiltonian path of graph 4:");
 foreach (var i in graph4.HamiltonianPath())
 {
     Console.Write($"{i} ");
