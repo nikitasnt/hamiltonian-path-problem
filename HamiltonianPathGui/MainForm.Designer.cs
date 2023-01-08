@@ -104,6 +104,7 @@
             this.addNodeNumericUpDown.Name = "addNodeNumericUpDown";
             this.addNodeNumericUpDown.Size = new System.Drawing.Size(120, 23);
             this.addNodeNumericUpDown.TabIndex = 2;
+            this.addNodeNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addNodeNumericUpDown_KeyPress);
             // 
             // addNodeButton
             // 
@@ -113,6 +114,7 @@
             this.addNodeButton.TabIndex = 3;
             this.addNodeButton.Text = "Add node";
             this.addNodeButton.UseVisualStyleBackColor = true;
+            this.addNodeButton.Click += new System.EventHandler(this.addNodeButton_Click);
             // 
             // addEdgeFromNumericUpDown
             // 
