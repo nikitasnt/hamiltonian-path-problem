@@ -127,6 +127,7 @@
             this.addEdgeFromNumericUpDown.Name = "addEdgeFromNumericUpDown";
             this.addEdgeFromNumericUpDown.Size = new System.Drawing.Size(120, 23);
             this.addEdgeFromNumericUpDown.TabIndex = 5;
+            this.addEdgeFromNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addEdgeFromNumericUpDown_KeyPress);
             // 
             // addEdgeFromLabel
             // 
@@ -148,6 +149,7 @@
             this.addEdgeToNumericUpDown.Name = "addEdgeToNumericUpDown";
             this.addEdgeToNumericUpDown.Size = new System.Drawing.Size(120, 23);
             this.addEdgeToNumericUpDown.TabIndex = 7;
+            this.addEdgeToNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addEdgeToNumericUpDown_KeyPress);
             // 
             // addEdgeToLabel
             // 
@@ -166,6 +168,7 @@
             this.addEdgeButton.TabIndex = 9;
             this.addEdgeButton.Text = "Add edge";
             this.addEdgeButton.UseVisualStyleBackColor = true;
+            this.addEdgeButton.Click += new System.EventHandler(this.addEdgeButton_Click);
             // 
             // findHamiltonianPathButton
             // 
