@@ -1,8 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRunner", "TestRunner\TestRunner.csproj", "{342F1220-90F9-4331-B3AB-A83558FB7EB8}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestRunner", "TestRunner\TestRunner.csproj", "{342F1220-90F9-4331-B3AB-A83558FB7EB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphLib", "GraphLib\GraphLib.csproj", "{106D5E0A-952C-4901-AB91-39DAE6B23B3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphLib", "GraphLib\GraphLib.csproj", "{106D5E0A-952C-4901-AB91-39DAE6B23B3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HamiltonianPathGui", "HamiltonianPathGui\HamiltonianPathGui.csproj", "{8BD8CD6C-0978-470B-9F05-269914E4672E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,7 +23,15 @@ Global
 		{106D5E0A-952C-4901-AB91-39DAE6B23B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{106D5E0A-952C-4901-AB91-39DAE6B23B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{106D5E0A-952C-4901-AB91-39DAE6B23B3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BD8CD6C-0978-470B-9F05-269914E4672E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BD8CD6C-0978-470B-9F05-269914E4672E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BD8CD6C-0978-470B-9F05-269914E4672E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BD8CD6C-0978-470B-9F05-269914E4672E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72468C7D-82A2-49E7-B13E-7DF2703DD12E}
 	EndGlobalSection
 EndGlobal
