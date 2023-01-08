@@ -30,19 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.gViewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
-            this.addNodeLabel = new System.Windows.Forms.Label();
-            this.addNodeNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.nodeLabel = new System.Windows.Forms.Label();
+            this.nodeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.addNodeButton = new System.Windows.Forms.Button();
-            this.addEdgeFromNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.addEdgeFromLabel = new System.Windows.Forms.Label();
-            this.addEdgeToNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.addEdgeToLabel = new System.Windows.Forms.Label();
+            this.edgeFromNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.edgeFromLabel = new System.Windows.Forms.Label();
+            this.edgeToNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.edgeToLabel = new System.Windows.Forms.Label();
             this.addEdgeButton = new System.Windows.Forms.Button();
             this.findHamiltonianPathButton = new System.Windows.Forms.Button();
             this.hamiltonianPathLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.addNodeNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addEdgeFromNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addEdgeToNumericUpDown)).BeginInit();
+            this.removeNodeButton = new System.Windows.Forms.Button();
+            this.removeEdgeButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.nodeNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edgeFromNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edgeToNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // gViewer
@@ -84,87 +86,87 @@
             this.gViewer.ZoomF = 1D;
             this.gViewer.ZoomWindowThreshold = 0.05D;
             // 
-            // addNodeLabel
+            // nodeLabel
             // 
-            this.addNodeLabel.AutoSize = true;
-            this.addNodeLabel.Location = new System.Drawing.Point(755, 12);
-            this.addNodeLabel.Name = "addNodeLabel";
-            this.addNodeLabel.Size = new System.Drawing.Size(62, 15);
-            this.addNodeLabel.TabIndex = 1;
-            this.addNodeLabel.Text = "Add node:";
+            this.nodeLabel.AutoSize = true;
+            this.nodeLabel.Location = new System.Drawing.Point(755, 12);
+            this.nodeLabel.Name = "nodeLabel";
+            this.nodeLabel.Size = new System.Drawing.Size(84, 15);
+            this.nodeLabel.TabIndex = 1;
+            this.nodeLabel.Text = "Node number:";
             // 
-            // addNodeNumericUpDown
+            // nodeNumericUpDown
             // 
-            this.addNodeNumericUpDown.Location = new System.Drawing.Point(755, 30);
-            this.addNodeNumericUpDown.Maximum = new decimal(new int[] {
+            this.nodeNumericUpDown.Location = new System.Drawing.Point(755, 30);
+            this.nodeNumericUpDown.Maximum = new decimal(new int[] {
             -1,
             0,
             0,
             0});
-            this.addNodeNumericUpDown.Name = "addNodeNumericUpDown";
-            this.addNodeNumericUpDown.Size = new System.Drawing.Size(120, 23);
-            this.addNodeNumericUpDown.TabIndex = 2;
-            this.addNodeNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addNodeNumericUpDown_KeyPress);
+            this.nodeNumericUpDown.Name = "nodeNumericUpDown";
+            this.nodeNumericUpDown.Size = new System.Drawing.Size(120, 23);
+            this.nodeNumericUpDown.TabIndex = 2;
+            this.nodeNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addNodeNumericUpDown_KeyPress);
             // 
             // addNodeButton
             // 
             this.addNodeButton.Location = new System.Drawing.Point(881, 30);
             this.addNodeButton.Name = "addNodeButton";
-            this.addNodeButton.Size = new System.Drawing.Size(75, 23);
+            this.addNodeButton.Size = new System.Drawing.Size(89, 23);
             this.addNodeButton.TabIndex = 3;
             this.addNodeButton.Text = "Add node";
             this.addNodeButton.UseVisualStyleBackColor = true;
             this.addNodeButton.Click += new System.EventHandler(this.addNodeButton_Click);
             // 
-            // addEdgeFromNumericUpDown
+            // edgeFromNumericUpDown
             // 
-            this.addEdgeFromNumericUpDown.Location = new System.Drawing.Point(755, 119);
-            this.addEdgeFromNumericUpDown.Maximum = new decimal(new int[] {
+            this.edgeFromNumericUpDown.Location = new System.Drawing.Point(755, 119);
+            this.edgeFromNumericUpDown.Maximum = new decimal(new int[] {
             -1,
             0,
             0,
             0});
-            this.addEdgeFromNumericUpDown.Name = "addEdgeFromNumericUpDown";
-            this.addEdgeFromNumericUpDown.Size = new System.Drawing.Size(120, 23);
-            this.addEdgeFromNumericUpDown.TabIndex = 5;
-            this.addEdgeFromNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addEdgeFromNumericUpDown_KeyPress);
+            this.edgeFromNumericUpDown.Name = "edgeFromNumericUpDown";
+            this.edgeFromNumericUpDown.Size = new System.Drawing.Size(120, 23);
+            this.edgeFromNumericUpDown.TabIndex = 5;
+            this.edgeFromNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addEdgeFromNumericUpDown_KeyPress);
             // 
-            // addEdgeFromLabel
+            // edgeFromLabel
             // 
-            this.addEdgeFromLabel.AutoSize = true;
-            this.addEdgeFromLabel.Location = new System.Drawing.Point(755, 101);
-            this.addEdgeFromLabel.Name = "addEdgeFromLabel";
-            this.addEdgeFromLabel.Size = new System.Drawing.Size(90, 15);
-            this.addEdgeFromLabel.TabIndex = 6;
-            this.addEdgeFromLabel.Text = "Add edge from:";
+            this.edgeFromLabel.AutoSize = true;
+            this.edgeFromLabel.Location = new System.Drawing.Point(755, 101);
+            this.edgeFromLabel.Name = "edgeFromLabel";
+            this.edgeFromLabel.Size = new System.Drawing.Size(95, 15);
+            this.edgeFromLabel.TabIndex = 6;
+            this.edgeFromLabel.Text = "Edge from node:";
             // 
-            // addEdgeToNumericUpDown
+            // edgeToNumericUpDown
             // 
-            this.addEdgeToNumericUpDown.Location = new System.Drawing.Point(755, 163);
-            this.addEdgeToNumericUpDown.Maximum = new decimal(new int[] {
+            this.edgeToNumericUpDown.Location = new System.Drawing.Point(755, 163);
+            this.edgeToNumericUpDown.Maximum = new decimal(new int[] {
             -1,
             0,
             0,
             0});
-            this.addEdgeToNumericUpDown.Name = "addEdgeToNumericUpDown";
-            this.addEdgeToNumericUpDown.Size = new System.Drawing.Size(120, 23);
-            this.addEdgeToNumericUpDown.TabIndex = 7;
-            this.addEdgeToNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addEdgeToNumericUpDown_KeyPress);
+            this.edgeToNumericUpDown.Name = "edgeToNumericUpDown";
+            this.edgeToNumericUpDown.Size = new System.Drawing.Size(120, 23);
+            this.edgeToNumericUpDown.TabIndex = 7;
+            this.edgeToNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addEdgeToNumericUpDown_KeyPress);
             // 
-            // addEdgeToLabel
+            // edgeToLabel
             // 
-            this.addEdgeToLabel.AutoSize = true;
-            this.addEdgeToLabel.Location = new System.Drawing.Point(755, 145);
-            this.addEdgeToLabel.Name = "addEdgeToLabel";
-            this.addEdgeToLabel.Size = new System.Drawing.Size(22, 15);
-            this.addEdgeToLabel.TabIndex = 8;
-            this.addEdgeToLabel.Text = "To:";
+            this.edgeToLabel.AutoSize = true;
+            this.edgeToLabel.Location = new System.Drawing.Point(755, 145);
+            this.edgeToLabel.Name = "edgeToLabel";
+            this.edgeToLabel.Size = new System.Drawing.Size(22, 15);
+            this.edgeToLabel.TabIndex = 8;
+            this.edgeToLabel.Text = "To:";
             // 
             // addEdgeButton
             // 
             this.addEdgeButton.Location = new System.Drawing.Point(881, 163);
             this.addEdgeButton.Name = "addEdgeButton";
-            this.addEdgeButton.Size = new System.Drawing.Size(75, 23);
+            this.addEdgeButton.Size = new System.Drawing.Size(89, 23);
             this.addEdgeButton.TabIndex = 9;
             this.addEdgeButton.Text = "Add edge";
             this.addEdgeButton.UseVisualStyleBackColor = true;
@@ -174,7 +176,7 @@
             // 
             this.findHamiltonianPathButton.Location = new System.Drawing.Point(755, 246);
             this.findHamiltonianPathButton.Name = "findHamiltonianPathButton";
-            this.findHamiltonianPathButton.Size = new System.Drawing.Size(201, 41);
+            this.findHamiltonianPathButton.Size = new System.Drawing.Size(215, 41);
             this.findHamiltonianPathButton.TabIndex = 10;
             this.findHamiltonianPathButton.Text = "Find a hamiltionian path";
             this.findHamiltonianPathButton.UseVisualStyleBackColor = true;
@@ -189,29 +191,51 @@
             this.hamiltonianPathLabel.Text = "Info about a hamiltonian path will be here";
             this.hamiltonianPathLabel.Visible = false;
             // 
+            // removeNodeButton
+            // 
+            this.removeNodeButton.Location = new System.Drawing.Point(976, 30);
+            this.removeNodeButton.Name = "removeNodeButton";
+            this.removeNodeButton.Size = new System.Drawing.Size(89, 23);
+            this.removeNodeButton.TabIndex = 12;
+            this.removeNodeButton.Text = "Remove node";
+            this.removeNodeButton.UseVisualStyleBackColor = true;
+            this.removeNodeButton.Click += new System.EventHandler(this.removeNodeButton_Click);
+            // 
+            // removeEdgeButton
+            // 
+            this.removeEdgeButton.Location = new System.Drawing.Point(976, 163);
+            this.removeEdgeButton.Name = "removeEdgeButton";
+            this.removeEdgeButton.Size = new System.Drawing.Size(89, 23);
+            this.removeEdgeButton.TabIndex = 13;
+            this.removeEdgeButton.Text = "Remove edge";
+            this.removeEdgeButton.UseVisualStyleBackColor = true;
+            this.removeEdgeButton.Click += new System.EventHandler(this.removeEdgeButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 661);
+            this.ClientSize = new System.Drawing.Size(1092, 661);
+            this.Controls.Add(this.removeEdgeButton);
+            this.Controls.Add(this.removeNodeButton);
             this.Controls.Add(this.hamiltonianPathLabel);
             this.Controls.Add(this.findHamiltonianPathButton);
             this.Controls.Add(this.addEdgeButton);
-            this.Controls.Add(this.addEdgeToLabel);
-            this.Controls.Add(this.addEdgeToNumericUpDown);
-            this.Controls.Add(this.addEdgeFromLabel);
-            this.Controls.Add(this.addEdgeFromNumericUpDown);
+            this.Controls.Add(this.edgeToLabel);
+            this.Controls.Add(this.edgeToNumericUpDown);
+            this.Controls.Add(this.edgeFromLabel);
+            this.Controls.Add(this.edgeFromNumericUpDown);
             this.Controls.Add(this.addNodeButton);
-            this.Controls.Add(this.addNodeNumericUpDown);
-            this.Controls.Add(this.addNodeLabel);
+            this.Controls.Add(this.nodeNumericUpDown);
+            this.Controls.Add(this.nodeLabel);
             this.Controls.Add(this.gViewer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Hamiltonian path";
-            ((System.ComponentModel.ISupportInitialize)(this.addNodeNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addEdgeFromNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addEdgeToNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nodeNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edgeFromNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edgeToNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,15 +244,17 @@
         #endregion
 
         private Microsoft.Msagl.GraphViewerGdi.GViewer gViewer;
-        private Label addNodeLabel;
-        private NumericUpDown addNodeNumericUpDown;
+        private Label nodeLabel;
+        private NumericUpDown nodeNumericUpDown;
         private Button addNodeButton;
-        private NumericUpDown addEdgeFromNumericUpDown;
-        private Label addEdgeFromLabel;
-        private NumericUpDown addEdgeToNumericUpDown;
-        private Label addEdgeToLabel;
+        private NumericUpDown edgeFromNumericUpDown;
+        private Label edgeFromLabel;
+        private NumericUpDown edgeToNumericUpDown;
+        private Label edgeToLabel;
         private Button addEdgeButton;
         private Button findHamiltonianPathButton;
         private Label hamiltonianPathLabel;
+        private Button removeNodeButton;
+        private Button removeEdgeButton;
     }
 }
