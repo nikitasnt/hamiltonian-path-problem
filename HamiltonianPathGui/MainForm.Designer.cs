@@ -110,9 +110,9 @@
             // 
             // addNodeButton
             // 
-            this.addNodeButton.Location = new System.Drawing.Point(881, 30);
+            this.addNodeButton.Location = new System.Drawing.Point(881, 12);
             this.addNodeButton.Name = "addNodeButton";
-            this.addNodeButton.Size = new System.Drawing.Size(89, 23);
+            this.addNodeButton.Size = new System.Drawing.Size(120, 41);
             this.addNodeButton.TabIndex = 3;
             this.addNodeButton.Text = "Add node";
             this.addNodeButton.UseVisualStyleBackColor = true;
@@ -164,9 +164,9 @@
             // 
             // addEdgeButton
             // 
-            this.addEdgeButton.Location = new System.Drawing.Point(881, 163);
+            this.addEdgeButton.Location = new System.Drawing.Point(881, 145);
             this.addEdgeButton.Name = "addEdgeButton";
-            this.addEdgeButton.Size = new System.Drawing.Size(89, 23);
+            this.addEdgeButton.Size = new System.Drawing.Size(120, 41);
             this.addEdgeButton.TabIndex = 9;
             this.addEdgeButton.Text = "Add edge";
             this.addEdgeButton.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@
             // 
             // findHamiltonianPathButton
             // 
-            this.findHamiltonianPathButton.Location = new System.Drawing.Point(755, 246);
+            this.findHamiltonianPathButton.Location = new System.Drawing.Point(755, 257);
             this.findHamiltonianPathButton.Name = "findHamiltonianPathButton";
             this.findHamiltonianPathButton.Size = new System.Drawing.Size(215, 41);
             this.findHamiltonianPathButton.TabIndex = 10;
@@ -184,7 +184,7 @@
             // hamiltonianPathLabel
             // 
             this.hamiltonianPathLabel.AutoSize = true;
-            this.hamiltonianPathLabel.Location = new System.Drawing.Point(755, 290);
+            this.hamiltonianPathLabel.Location = new System.Drawing.Point(755, 301);
             this.hamiltonianPathLabel.Name = "hamiltonianPathLabel";
             this.hamiltonianPathLabel.Size = new System.Drawing.Size(228, 15);
             this.hamiltonianPathLabel.TabIndex = 11;
@@ -193,7 +193,7 @@
             // 
             // removeNodeButton
             // 
-            this.removeNodeButton.Location = new System.Drawing.Point(976, 30);
+            this.removeNodeButton.Location = new System.Drawing.Point(912, 59);
             this.removeNodeButton.Name = "removeNodeButton";
             this.removeNodeButton.Size = new System.Drawing.Size(89, 23);
             this.removeNodeButton.TabIndex = 12;
@@ -203,7 +203,7 @@
             // 
             // removeEdgeButton
             // 
-            this.removeEdgeButton.Location = new System.Drawing.Point(976, 163);
+            this.removeEdgeButton.Location = new System.Drawing.Point(912, 192);
             this.removeEdgeButton.Name = "removeEdgeButton";
             this.removeEdgeButton.Size = new System.Drawing.Size(89, 23);
             this.removeEdgeButton.TabIndex = 13;
