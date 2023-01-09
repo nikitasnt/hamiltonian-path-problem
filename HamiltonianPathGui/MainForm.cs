@@ -5,12 +5,13 @@ namespace HamiltonianPathGui
 {
     public partial class MainForm : Form
     {
-        private readonly Graph _graph;
+        private Graph _graph;
         
         public MainForm()
         {
             InitializeComponent();
             _graph = new Graph("Main form graph");
+            gViewer.Graph = _graph;
         }
 
         private void addNodeButton_Click(object sender, EventArgs e)
@@ -168,6 +169,16 @@ namespace HamiltonianPathGui
 
             hamiltonianPathLabel.Text = $"Hamiltonian path:\n{string.Join(", ", hamiltonianPath)}";
             hamiltonianPathLabel.Visible = true;
+        }
+
+        private void clearGraphButton_Click(object sender, EventArgs e)
+        {
+            hamiltonianPathLabel.Visible = false;
+
+            nodeNumericUpDown.Value = 1;
+
+            _graph = new Graph("Main form graph");
+            gViewer.Graph = _graph;
         }
     }
 }

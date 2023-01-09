@@ -42,6 +42,7 @@
             this.hamiltonianPathLabel = new System.Windows.Forms.Label();
             this.removeNodeButton = new System.Windows.Forms.Button();
             this.removeEdgeButton = new System.Windows.Forms.Button();
+            this.clearGraphButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nodeNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edgeFromNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edgeToNumericUpDown)).BeginInit();
@@ -204,7 +205,7 @@
             // 
             // findHamiltonianPathButton
             // 
-            this.findHamiltonianPathButton.Location = new System.Drawing.Point(755, 257);
+            this.findHamiltonianPathButton.Location = new System.Drawing.Point(755, 349);
             this.findHamiltonianPathButton.Name = "findHamiltonianPathButton";
             this.findHamiltonianPathButton.Size = new System.Drawing.Size(246, 41);
             this.findHamiltonianPathButton.TabIndex = 10;
@@ -215,7 +216,7 @@
             // hamiltonianPathLabel
             // 
             this.hamiltonianPathLabel.AutoSize = true;
-            this.hamiltonianPathLabel.Location = new System.Drawing.Point(755, 301);
+            this.hamiltonianPathLabel.Location = new System.Drawing.Point(755, 393);
             this.hamiltonianPathLabel.MaximumSize = new System.Drawing.Size(246, 0);
             this.hamiltonianPathLabel.Name = "hamiltonianPathLabel";
             this.hamiltonianPathLabel.Size = new System.Drawing.Size(228, 15);
@@ -243,11 +244,22 @@
             this.removeEdgeButton.UseVisualStyleBackColor = true;
             this.removeEdgeButton.Click += new System.EventHandler(this.removeEdgeButton_Click);
             // 
+            // clearGraphButton
+            // 
+            this.clearGraphButton.Location = new System.Drawing.Point(912, 258);
+            this.clearGraphButton.Name = "clearGraphButton";
+            this.clearGraphButton.Size = new System.Drawing.Size(89, 41);
+            this.clearGraphButton.TabIndex = 14;
+            this.clearGraphButton.Text = "Clear graph";
+            this.clearGraphButton.UseVisualStyleBackColor = true;
+            this.clearGraphButton.Click += new System.EventHandler(this.clearGraphButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 661);
+            this.Controls.Add(this.clearGraphButton);
             this.Controls.Add(this.removeEdgeButton);
             this.Controls.Add(this.removeNodeButton);
             this.Controls.Add(this.hamiltonianPathLabel);
@@ -288,5 +300,6 @@
         private Label hamiltonianPathLabel;
         private Button removeNodeButton;
         private Button removeEdgeButton;
+        private Button clearGraphButton;
     }
 }
