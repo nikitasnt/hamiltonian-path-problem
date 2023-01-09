@@ -1,16 +1,17 @@
 using Microsoft.Msagl.Drawing;
+using MsaglGraphExtensions;
 
 namespace HamiltonianPathGui
 {
     public partial class MainForm : Form
     {
+        private readonly Graph _graph;
+        
         public MainForm()
         {
             InitializeComponent();
             _graph = new Graph("Main form graph");
         }
-
-        private readonly Graph _graph;
 
         private void addNodeButton_Click(object sender, EventArgs e)
         {
@@ -22,6 +23,8 @@ namespace HamiltonianPathGui
                 MessageBox.Show($"Node with number {nodeNumberStr} already exists!");
                 return;
             }
+
+            hamiltonianPathLabel.Visible = false;
 
             _graph.AddNode(nodeNumberStr);
             nodeNumericUpDown.Value++;
@@ -57,6 +60,8 @@ namespace HamiltonianPathGui
                 return;
             }
 
+            hamiltonianPathLabel.Visible = false;
+
             _graph.AddEdge(firstNodeNumberStr, secondNodeNumberStr);
 
             gViewer.Graph = _graph;
@@ -90,6 +95,8 @@ namespace HamiltonianPathGui
                 MessageBox.Show($"Node with number {nodeNumberStr} doesn't exists!");
                 return;
             }
+
+            hamiltonianPathLabel.Visible = false;
 
             _graph.RemoveNode(node);
 
@@ -128,9 +135,39 @@ namespace HamiltonianPathGui
                 return;
             }
 
+            hamiltonianPathLabel.Visible = false;
+
             _graph.RemoveEdge(edge);
 
             gViewer.Graph = _graph;
+        }
+
+        private void findHamiltonianPathButton_Click(object sender, EventArgs e)
+        {
+            if (!_graph.NodeNumbersStartWithOne())
+            {
+                MessageBox.Show("Graph is empty or node numbers don't start with 1!");
+                return;
+            }
+
+            if (_graph.HasMissingNodeNumbers())
+            {
+                MessageBox.Show("Graph has missing node numbers!");
+                return;
+            }
+
+            var graphLibGraph = _graph.ToGraphLibGraph();
+            var hamiltonianPath = graphLibGraph.HamiltonianPath();
+
+            if (hamiltonianPath.Count == 0)
+            {
+                hamiltonianPathLabel.Text = "Hamiltonian path doesn't exists";
+                hamiltonianPathLabel.Visible = true;
+                return;
+            }
+
+            hamiltonianPathLabel.Text = $"Hamiltonian path:\n{string.Join(", ", hamiltonianPath)}";
+            hamiltonianPathLabel.Visible = true;
         }
     }
 }

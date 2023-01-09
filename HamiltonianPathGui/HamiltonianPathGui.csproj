@@ -12,4 +12,8 @@
     <PackageReference Include="AutomaticGraphLayout.GraphViewerGDI" Version="1.1.12" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MsaglAdapter\MsaglGraphExtensions.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -103,9 +103,19 @@
             0,
             0,
             0});
+            this.nodeNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nodeNumericUpDown.Name = "nodeNumericUpDown";
             this.nodeNumericUpDown.Size = new System.Drawing.Size(120, 23);
             this.nodeNumericUpDown.TabIndex = 2;
+            this.nodeNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nodeNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addNodeNumericUpDown_KeyPress);
             // 
             // addNodeButton
@@ -126,9 +136,19 @@
             0,
             0,
             0});
+            this.edgeFromNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.edgeFromNumericUpDown.Name = "edgeFromNumericUpDown";
             this.edgeFromNumericUpDown.Size = new System.Drawing.Size(120, 23);
             this.edgeFromNumericUpDown.TabIndex = 5;
+            this.edgeFromNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.edgeFromNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addEdgeFromNumericUpDown_KeyPress);
             // 
             // edgeFromLabel
@@ -148,9 +168,19 @@
             0,
             0,
             0});
+            this.edgeToNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.edgeToNumericUpDown.Name = "edgeToNumericUpDown";
             this.edgeToNumericUpDown.Size = new System.Drawing.Size(120, 23);
             this.edgeToNumericUpDown.TabIndex = 7;
+            this.edgeToNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.edgeToNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addEdgeToNumericUpDown_KeyPress);
             // 
             // edgeToLabel
@@ -176,15 +206,17 @@
             // 
             this.findHamiltonianPathButton.Location = new System.Drawing.Point(755, 257);
             this.findHamiltonianPathButton.Name = "findHamiltonianPathButton";
-            this.findHamiltonianPathButton.Size = new System.Drawing.Size(215, 41);
+            this.findHamiltonianPathButton.Size = new System.Drawing.Size(246, 41);
             this.findHamiltonianPathButton.TabIndex = 10;
             this.findHamiltonianPathButton.Text = "Find a hamiltionian path";
             this.findHamiltonianPathButton.UseVisualStyleBackColor = true;
+            this.findHamiltonianPathButton.Click += new System.EventHandler(this.findHamiltonianPathButton_Click);
             // 
             // hamiltonianPathLabel
             // 
             this.hamiltonianPathLabel.AutoSize = true;
             this.hamiltonianPathLabel.Location = new System.Drawing.Point(755, 301);
+            this.hamiltonianPathLabel.MaximumSize = new System.Drawing.Size(246, 0);
             this.hamiltonianPathLabel.Name = "hamiltonianPathLabel";
             this.hamiltonianPathLabel.Size = new System.Drawing.Size(228, 15);
             this.hamiltonianPathLabel.TabIndex = 11;
