@@ -1,5 +1,4 @@
 using Microsoft.Msagl.Drawing;
-using Microsoft.Msagl.GraphViewerGdi;
 using MsaglGraphExtensions;
 
 namespace HamiltonianPathGui
@@ -19,6 +18,25 @@ namespace HamiltonianPathGui
             mousePrivateField!.SetValue(gViewer, false);
 
             gViewer.OutsideAreaBrush = Brushes.White;
+
+            foreach (var control in Controls)
+            {
+                if (control is NumericUpDown numericUpDown)
+                {
+                    numericUpDown.MouseWheel += (sender, e) =>
+                    {
+                        HandledMouseEventArgs handledArgs = (e as HandledMouseEventArgs)!;
+                        handledArgs.Handled = true;
+                        try
+                        {
+                            numericUpDown.Value += (handledArgs.Delta > 0) ? 1 : -1;
+                        }
+                        catch (ArgumentOutOfRangeException) { };
+                    };
+                }
+            }
+
+            UpdateNumericUpDownMaxValues();
         }
 
         private void addNodeButton_Click(object sender, EventArgs e)
@@ -35,9 +53,10 @@ namespace HamiltonianPathGui
             hamiltonianPathLabel.Visible = false;
 
             _graph.AddNode(nodeNumberStr);
-            nodeNumericUpDown.Value++;
 
             gViewer.Graph = _graph;
+            UpdateNumericUpDownMaxValues();
+            nodeNumericUpDown.Value++;
         }
 
         private void addNodeNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)
@@ -109,6 +128,7 @@ namespace HamiltonianPathGui
             _graph.RemoveNode(node);
 
             gViewer.Graph = _graph;
+            UpdateNumericUpDownMaxValues();
         }
 
         private void removeEdgeButton_Click(object sender, EventArgs e)
@@ -186,6 +206,16 @@ namespace HamiltonianPathGui
 
             _graph = new Graph("Main form graph");
             gViewer.Graph = _graph;
+            UpdateNumericUpDownMaxValues();
+        }
+
+        private void UpdateNumericUpDownMaxValues()
+        {
+            var maxNodeNumber = _graph.Nodes.Count() == 0 ? 1 : _graph.Nodes.Max(_ => int.Parse(_.Id));
+
+            nodeNumericUpDown.Maximum = _graph.Nodes.Count() == 0 ? 1 : maxNodeNumber + 1;
+            edgeFromNumericUpDown.Maximum = maxNodeNumber;
+            edgeToNumericUpDown.Maximum = maxNodeNumber;
         }
 
         #region Help
