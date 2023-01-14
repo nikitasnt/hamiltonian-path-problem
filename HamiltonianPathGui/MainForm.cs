@@ -187,5 +187,57 @@ namespace HamiltonianPathGui
             _graph = new Graph("Main form graph");
             gViewer.Graph = _graph;
         }
+
+        #region Help
+        private void nodeNumericUpDown_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show("Это поле отвечает за номер вершины, которую вы хотите добавить/удалить. Оно должно быть целым числом, большим нуля.");
+        }
+
+        private void addNodeButton_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show("Эта кнопка добавляет вершину с номером, указанным в поле \"Node number\".");
+        }
+
+        private void removeNodeButton_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show("Эта кнопка удаляет вершину с номером, указанным в поле \"Node number\".");
+        }
+
+        private void edgeFromNumericUpDown_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show("Это поле отвечает за номер вершины, из которой вы хотите добавить/удалить ребро. Оно должно быть целым числом, большим нуля.");
+        }
+
+        private void edgeToNumericUpDown_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show("Это поле отвечает за номер вершины, в которую вы хотите добавить/удалить ребро. Оно должно быть целым числом, большим нуля.");
+        }
+
+        private void addEdgeButton_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show("Эта кнопка добавляет ребро из вершины с номером, указанным в поле \"Edge from node\", в вершину с номером, указанным в поле \"Edge to\".");
+        }
+
+        private void removeEdgeButton_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show("Эта кнопка удаляет ребро из вершины с номером, указанным в поле \"Edge from node\", в вершину с номером, указанным в поле \"Edge to\".");
+        }
+
+        private void clearGraphButton_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show("Эта кнопка очищает граф, то есть удаляет из него все вершины и ребра).");
+        }
+
+        private void findHamiltonianPathButton_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show("Эта кнопка ищет гамильтонов путь в графе. Если гамильтонов путь существует, то он будет выведен под этой кнопкой.");
+        }
+
+        private void gViewer_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show("В этом поле отображается граф и все его вершины и ребра.");
+        }
+        #endregion
     }
 }

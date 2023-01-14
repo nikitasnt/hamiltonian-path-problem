@@ -86,6 +86,7 @@
             this.gViewer.WindowZoomButtonPressed = false;
             this.gViewer.ZoomF = 1D;
             this.gViewer.ZoomWindowThreshold = 0.05D;
+            this.gViewer.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.gViewer_HelpRequested);
             // 
             // nodeLabel
             // 
@@ -117,6 +118,7 @@
             0,
             0,
             0});
+            this.nodeNumericUpDown.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.nodeNumericUpDown_HelpRequested);
             this.nodeNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addNodeNumericUpDown_KeyPress);
             // 
             // addNodeButton
@@ -128,6 +130,7 @@
             this.addNodeButton.Text = "Add node";
             this.addNodeButton.UseVisualStyleBackColor = true;
             this.addNodeButton.Click += new System.EventHandler(this.addNodeButton_Click);
+            this.addNodeButton.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.addNodeButton_HelpRequested);
             // 
             // edgeFromNumericUpDown
             // 
@@ -150,6 +153,7 @@
             0,
             0,
             0});
+            this.edgeFromNumericUpDown.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.edgeFromNumericUpDown_HelpRequested);
             this.edgeFromNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addEdgeFromNumericUpDown_KeyPress);
             // 
             // edgeFromLabel
@@ -182,6 +186,7 @@
             0,
             0,
             0});
+            this.edgeToNumericUpDown.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.edgeToNumericUpDown_HelpRequested);
             this.edgeToNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addEdgeToNumericUpDown_KeyPress);
             // 
             // edgeToLabel
@@ -202,6 +207,7 @@
             this.addEdgeButton.Text = "Add edge";
             this.addEdgeButton.UseVisualStyleBackColor = true;
             this.addEdgeButton.Click += new System.EventHandler(this.addEdgeButton_Click);
+            this.addEdgeButton.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.addEdgeButton_HelpRequested);
             // 
             // findHamiltonianPathButton
             // 
@@ -212,6 +218,7 @@
             this.findHamiltonianPathButton.Text = "Find a hamiltionian path";
             this.findHamiltonianPathButton.UseVisualStyleBackColor = true;
             this.findHamiltonianPathButton.Click += new System.EventHandler(this.findHamiltonianPathButton_Click);
+            this.findHamiltonianPathButton.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.findHamiltonianPathButton_HelpRequested);
             // 
             // hamiltonianPathLabel
             // 
@@ -233,6 +240,7 @@
             this.removeNodeButton.Text = "Remove node";
             this.removeNodeButton.UseVisualStyleBackColor = true;
             this.removeNodeButton.Click += new System.EventHandler(this.removeNodeButton_Click);
+            this.removeNodeButton.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.removeNodeButton_HelpRequested);
             // 
             // removeEdgeButton
             // 
@@ -243,6 +251,7 @@
             this.removeEdgeButton.Text = "Remove edge";
             this.removeEdgeButton.UseVisualStyleBackColor = true;
             this.removeEdgeButton.Click += new System.EventHandler(this.removeEdgeButton_Click);
+            this.removeEdgeButton.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.removeEdgeButton_HelpRequested);
             // 
             // clearGraphButton
             // 
@@ -253,6 +262,7 @@
             this.clearGraphButton.Text = "Clear graph";
             this.clearGraphButton.UseVisualStyleBackColor = true;
             this.clearGraphButton.Click += new System.EventHandler(this.clearGraphButton_Click);
+            this.clearGraphButton.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.clearGraphButton_HelpRequested);
             // 
             // MainForm
             // 
@@ -274,7 +284,9 @@
             this.Controls.Add(this.nodeLabel);
             this.Controls.Add(this.gViewer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Text = "Hamiltonian path";
             ((System.ComponentModel.ISupportInitialize)(this.nodeNumericUpDown)).EndInit();
