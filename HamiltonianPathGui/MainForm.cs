@@ -1,4 +1,5 @@
 using Microsoft.Msagl.Drawing;
+using Microsoft.Msagl.GraphViewerGdi;
 using MsaglGraphExtensions;
 
 namespace HamiltonianPathGui
@@ -12,6 +13,12 @@ namespace HamiltonianPathGui
             InitializeComponent();
             _graph = new Graph("Main form graph");
             gViewer.Graph = _graph;
+
+            var mousePrivateField = gViewer.GetType().GetField("zoomWhenMouseWheelScroll",
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            mousePrivateField!.SetValue(gViewer, false);
+
+            gViewer.OutsideAreaBrush = Brushes.White;
         }
 
         private void addNodeButton_Click(object sender, EventArgs e)

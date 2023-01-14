@@ -56,33 +56,33 @@
             this.gViewer.BackwardEnabled = false;
             this.gViewer.BuildHitTree = true;
             this.gViewer.CurrentLayoutMethod = Microsoft.Msagl.GraphViewerGdi.LayoutMethod.UseSettingsOfTheGraph;
-            this.gViewer.EdgeInsertButtonVisible = true;
+            this.gViewer.EdgeInsertButtonVisible = false;
             this.gViewer.FileName = "";
             this.gViewer.ForwardEnabled = false;
             this.gViewer.Graph = null;
             this.gViewer.InsertingEdge = false;
             this.gViewer.LayoutAlgorithmSettingsButtonVisible = true;
-            this.gViewer.LayoutEditingEnabled = true;
+            this.gViewer.LayoutEditingEnabled = false;
             this.gViewer.Location = new System.Drawing.Point(12, 12);
             this.gViewer.LooseOffsetForRouting = 0.25D;
             this.gViewer.MouseHitDistance = 0.05D;
             this.gViewer.Name = "gViewer";
-            this.gViewer.NavigationVisible = true;
+            this.gViewer.NavigationVisible = false;
             this.gViewer.NeedToCalculateLayout = true;
             this.gViewer.OffsetForRelaxingInRouting = 0.6D;
             this.gViewer.PaddingForEdgeRouting = 8D;
             this.gViewer.PanButtonPressed = false;
-            this.gViewer.SaveAsImageEnabled = true;
-            this.gViewer.SaveAsMsaglEnabled = true;
-            this.gViewer.SaveButtonVisible = true;
-            this.gViewer.SaveGraphButtonVisible = true;
-            this.gViewer.SaveInVectorFormatEnabled = true;
-            this.gViewer.Size = new System.Drawing.Size(737, 637);
+            this.gViewer.SaveAsImageEnabled = false;
+            this.gViewer.SaveAsMsaglEnabled = false;
+            this.gViewer.SaveButtonVisible = false;
+            this.gViewer.SaveGraphButtonVisible = false;
+            this.gViewer.SaveInVectorFormatEnabled = false;
+            this.gViewer.Size = new System.Drawing.Size(752, 637);
             this.gViewer.TabIndex = 0;
             this.gViewer.TightOffsetForRouting = 0.125D;
-            this.gViewer.ToolBarIsVisible = true;
+            this.gViewer.ToolBarIsVisible = false;
             this.gViewer.Transform = ((Microsoft.Msagl.Core.Geometry.Curves.PlaneTransformation)(resources.GetObject("gViewer.Transform")));
-            this.gViewer.UndoRedoButtonsVisible = true;
+            this.gViewer.UndoRedoButtonsVisible = false;
             this.gViewer.WindowZoomButtonPressed = false;
             this.gViewer.ZoomF = 1D;
             this.gViewer.ZoomWindowThreshold = 0.05D;
@@ -90,7 +90,7 @@
             // nodeLabel
             // 
             this.nodeLabel.AutoSize = true;
-            this.nodeLabel.Location = new System.Drawing.Point(755, 12);
+            this.nodeLabel.Location = new System.Drawing.Point(770, 12);
             this.nodeLabel.Name = "nodeLabel";
             this.nodeLabel.Size = new System.Drawing.Size(84, 15);
             this.nodeLabel.TabIndex = 1;
@@ -98,7 +98,7 @@
             // 
             // nodeNumericUpDown
             // 
-            this.nodeNumericUpDown.Location = new System.Drawing.Point(755, 30);
+            this.nodeNumericUpDown.Location = new System.Drawing.Point(770, 30);
             this.nodeNumericUpDown.Maximum = new decimal(new int[] {
             -1,
             0,
@@ -121,7 +121,7 @@
             // 
             // addNodeButton
             // 
-            this.addNodeButton.Location = new System.Drawing.Point(881, 12);
+            this.addNodeButton.Location = new System.Drawing.Point(896, 12);
             this.addNodeButton.Name = "addNodeButton";
             this.addNodeButton.Size = new System.Drawing.Size(120, 41);
             this.addNodeButton.TabIndex = 3;
@@ -131,7 +131,7 @@
             // 
             // edgeFromNumericUpDown
             // 
-            this.edgeFromNumericUpDown.Location = new System.Drawing.Point(755, 119);
+            this.edgeFromNumericUpDown.Location = new System.Drawing.Point(770, 119);
             this.edgeFromNumericUpDown.Maximum = new decimal(new int[] {
             -1,
             0,
@@ -155,7 +155,7 @@
             // edgeFromLabel
             // 
             this.edgeFromLabel.AutoSize = true;
-            this.edgeFromLabel.Location = new System.Drawing.Point(755, 101);
+            this.edgeFromLabel.Location = new System.Drawing.Point(770, 101);
             this.edgeFromLabel.Name = "edgeFromLabel";
             this.edgeFromLabel.Size = new System.Drawing.Size(95, 15);
             this.edgeFromLabel.TabIndex = 6;
@@ -163,7 +163,7 @@
             // 
             // edgeToNumericUpDown
             // 
-            this.edgeToNumericUpDown.Location = new System.Drawing.Point(755, 163);
+            this.edgeToNumericUpDown.Location = new System.Drawing.Point(770, 163);
             this.edgeToNumericUpDown.Maximum = new decimal(new int[] {
             -1,
             0,
@@ -187,7 +187,7 @@
             // edgeToLabel
             // 
             this.edgeToLabel.AutoSize = true;
-            this.edgeToLabel.Location = new System.Drawing.Point(755, 145);
+            this.edgeToLabel.Location = new System.Drawing.Point(770, 145);
             this.edgeToLabel.Name = "edgeToLabel";
             this.edgeToLabel.Size = new System.Drawing.Size(22, 15);
             this.edgeToLabel.TabIndex = 8;
@@ -195,7 +195,7 @@
             // 
             // addEdgeButton
             // 
-            this.addEdgeButton.Location = new System.Drawing.Point(881, 145);
+            this.addEdgeButton.Location = new System.Drawing.Point(896, 145);
             this.addEdgeButton.Name = "addEdgeButton";
             this.addEdgeButton.Size = new System.Drawing.Size(120, 41);
             this.addEdgeButton.TabIndex = 9;
@@ -205,7 +205,7 @@
             // 
             // findHamiltonianPathButton
             // 
-            this.findHamiltonianPathButton.Location = new System.Drawing.Point(755, 349);
+            this.findHamiltonianPathButton.Location = new System.Drawing.Point(770, 349);
             this.findHamiltonianPathButton.Name = "findHamiltonianPathButton";
             this.findHamiltonianPathButton.Size = new System.Drawing.Size(246, 41);
             this.findHamiltonianPathButton.TabIndex = 10;
@@ -216,7 +216,7 @@
             // hamiltonianPathLabel
             // 
             this.hamiltonianPathLabel.AutoSize = true;
-            this.hamiltonianPathLabel.Location = new System.Drawing.Point(755, 393);
+            this.hamiltonianPathLabel.Location = new System.Drawing.Point(770, 393);
             this.hamiltonianPathLabel.MaximumSize = new System.Drawing.Size(246, 0);
             this.hamiltonianPathLabel.Name = "hamiltonianPathLabel";
             this.hamiltonianPathLabel.Size = new System.Drawing.Size(228, 15);
@@ -226,7 +226,7 @@
             // 
             // removeNodeButton
             // 
-            this.removeNodeButton.Location = new System.Drawing.Point(912, 59);
+            this.removeNodeButton.Location = new System.Drawing.Point(927, 59);
             this.removeNodeButton.Name = "removeNodeButton";
             this.removeNodeButton.Size = new System.Drawing.Size(89, 23);
             this.removeNodeButton.TabIndex = 12;
@@ -236,7 +236,7 @@
             // 
             // removeEdgeButton
             // 
-            this.removeEdgeButton.Location = new System.Drawing.Point(912, 192);
+            this.removeEdgeButton.Location = new System.Drawing.Point(927, 192);
             this.removeEdgeButton.Name = "removeEdgeButton";
             this.removeEdgeButton.Size = new System.Drawing.Size(89, 23);
             this.removeEdgeButton.TabIndex = 13;
@@ -246,7 +246,7 @@
             // 
             // clearGraphButton
             // 
-            this.clearGraphButton.Location = new System.Drawing.Point(912, 258);
+            this.clearGraphButton.Location = new System.Drawing.Point(927, 258);
             this.clearGraphButton.Name = "clearGraphButton";
             this.clearGraphButton.Size = new System.Drawing.Size(89, 41);
             this.clearGraphButton.TabIndex = 14;
@@ -258,7 +258,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 661);
+            this.ClientSize = new System.Drawing.Size(1028, 661);
             this.Controls.Add(this.clearGraphButton);
             this.Controls.Add(this.removeEdgeButton);
             this.Controls.Add(this.removeNodeButton);
