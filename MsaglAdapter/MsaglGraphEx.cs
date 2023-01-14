@@ -43,4 +43,12 @@ public static class MsaglGraphEx
         }
         return false;
     }
+
+    public static void ResetEdgeColors(this Microsoft.Msagl.Drawing.Graph graph)
+    {
+        foreach (var edge in graph.Edges)
+        {
+            edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Black;
+        }
+    }
 }

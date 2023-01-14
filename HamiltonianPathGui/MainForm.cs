@@ -51,8 +51,10 @@ namespace HamiltonianPathGui
             }
 
             hamiltonianPathLabel.Visible = false;
-
+            
             _graph.AddNode(nodeNumberStr);
+
+            _graph.ResetEdgeColors();
 
             gViewer.Graph = _graph;
             UpdateNumericUpDownMaxValues();
@@ -86,8 +88,6 @@ namespace HamiltonianPathGui
                 MessageBox.Show($"Node with number {secondNodeNumberStr} doesn't exists!");
                 return;
             }
-
-            hamiltonianPathLabel.Visible = false;
 
             _graph.AddEdge(firstNodeNumberStr, secondNodeNumberStr);
 
@@ -127,6 +127,8 @@ namespace HamiltonianPathGui
 
             _graph.RemoveNode(node);
 
+            _graph.ResetEdgeColors();
+
             gViewer.Graph = _graph;
             UpdateNumericUpDownMaxValues();
         }
@@ -155,7 +157,7 @@ namespace HamiltonianPathGui
                 return;
             }
 
-            var edge = _graph.Edges.Where(_ => _.SourceNode == firstNode && _.TargetNode == secondNode).FirstOrDefault();
+            var edge = _graph.Edges.FirstOrDefault(_ => _.SourceNode == firstNode && _.TargetNode == secondNode);
 
             if (edge == null)
             {
@@ -166,6 +168,8 @@ namespace HamiltonianPathGui
             hamiltonianPathLabel.Visible = false;
 
             _graph.RemoveEdge(edge);
+
+            _graph.ResetEdgeColors();
 
             gViewer.Graph = _graph;
         }
@@ -196,6 +200,18 @@ namespace HamiltonianPathGui
 
             hamiltonianPathLabel.Text = $"Hamiltonian path:\n{string.Join(", ", hamiltonianPath)}";
             hamiltonianPathLabel.Visible = true;
+
+            if (hamiltonianPath.Count > 1)
+            {
+                for (int i = 1; i < hamiltonianPath.Count; i++)
+                {
+                    var firstNode = _graph.FindNode(hamiltonianPath[i - 1].ToString());
+                    var secondNode = _graph.FindNode(hamiltonianPath[i].ToString());
+                    var edge = _graph.Edges.First(_ => _.SourceNode == firstNode && _.TargetNode == secondNode);
+                    edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
+                }
+                gViewer.Graph = _graph;
+            }
         }
 
         private void clearGraphButton_Click(object sender, EventArgs e)
