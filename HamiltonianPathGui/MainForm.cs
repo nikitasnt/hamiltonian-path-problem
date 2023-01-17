@@ -63,10 +63,7 @@ namespace HamiltonianPathGui
 
         private void addNodeNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar < 48 || e.KeyChar > 57)
-            {
-                e.Handled = true;
-            }
+            RestrictNumericUpDownInput(e);
         }
 
         private void addEdgeButton_Click(object sender, EventArgs e)
@@ -96,18 +93,12 @@ namespace HamiltonianPathGui
 
         private void addEdgeFromNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar < 48 || e.KeyChar > 57)
-            {
-                e.Handled = true;
-            }
+            RestrictNumericUpDownInput(e);
         }
 
         private void addEdgeToNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar < 48 || e.KeyChar > 57)
-            {
-                e.Handled = true;
-            }
+            RestrictNumericUpDownInput(e);
         }
 
         private void removeNodeButton_Click(object sender, EventArgs e)
@@ -232,6 +223,14 @@ namespace HamiltonianPathGui
             nodeNumericUpDown.Maximum = _graph.Nodes.Count() == 0 ? 1 : maxNodeNumber + 1;
             edgeFromNumericUpDown.Maximum = maxNodeNumber;
             edgeToNumericUpDown.Maximum = maxNodeNumber;
+        }
+
+        private void RestrictNumericUpDownInput(KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
         }
 
         #region Help
